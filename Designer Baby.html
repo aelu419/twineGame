@@ -20,7 +20,7 @@
 (click: ?show_1)|show_2&gt;[//(confused stare:) ...//]
 (click: ?show_2)|show_3&gt;[//            ...//]
 (click: ?show_3)|show_4&gt;[//     ...//]
-(click: ?show_4)|show_5&gt;[//Mrs.	██████... if you&#39;ve been hearing voices in your head, particularly if that voice is &quot;not italicized&quot; (not sure what that means but) you should get that checked later--//]
+(click: ?show_4)[//Mrs.	██████... if you&#39;ve been hearing voices in your head, particularly if that voice is &quot;not italicized&quot; (not sure what that means but) you should get that checked later|show_5&gt;[--]//]
 (click: ?show_5)|show6&gt;[//But for now, here&#39;s the [[REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="3" name="myself" tags="" position="457,372.5" size="100,100">Please click |show_a1&gt;[here] to enable your camera
 Or [[not-&gt;Full Intro]], if you don&#39;t want to give some random Twine game permission to your camera
 
@@ -42,14 +42,14 @@ You are pregnant with a child, and from the gene samples we took last week, this
 
 1. Well I don&#39;t really care, just [[randomize]]
 2. I want my character to look exactly like [[myself]]
-3. I want the BEST design and HIGHEST stats, give me [[detailed control over every single trait]]</tw-passagedata><tw-passagedata pid="6" name="Character Selection" tags="" position="571,375.5" size="100,100">{(set: _random to (random: 2))
+3. I want the BEST design and HIGHEST stats, give me [[detailed control over every single trait]]</tw-passagedata><tw-passagedata pid="6" name="Character Selection" tags="" position="582,373.5" size="100,100">{(set: _random to (random: 2))
 (if: _random is 0)[(set: $hair to &quot;long&quot;)]
 (else-if: _random is 1)[(set: $hair to &quot;short&quot;)]
 (else:)[(set: $hair to &quot;none&quot;)]
 (set: _random to (random: 2))
 (if: _random is 0)[(set: $hair_color to &quot;brown&quot;)]
 (else-if: _random is 1)[(set: $hair_color to &quot;red&quot;)]
-(else:)[(set: $hair_color to &quot;blond&quot;)]
+(else:)[(set: $hair_color to &quot;blonde&quot;)]
 (set: _random to (random: 2))
 (if: _random is 0)[(set: $eye_color to &quot;long&quot;)]
 (else-if: _random is 1)[(set: $eye_color to &quot;short&quot;)]
@@ -95,8 +95,8 @@ while I agree that some of these traits may be ^^ahem^^**uncommon**, I wouldn&#3
 ~~gene editing sounds a bit sketchy~~
 [[What can I edit?-&gt;Editing]]</tw-passagedata><tw-passagedata pid="9" name="DocConversation2" tags="" position="736,378.5" size="100,100">//If that&#39;s the case, there is always a chance to change any of these traits with our gene editing technology. In fact, most of the parents, 80%!--eventually decided to change some bits of their child--//
 
-|choice1&gt;[well... I&#39;m not so sure, let me talk with my friend first about this]
-|choice2&gt;[yeah, go ahead!]
+[[well... I&#39;m not so sure, let me talk with my friend first about this-&gt;Friend]]
+[[yeah, go ahead!-&gt;Editing]]
 |choice3&gt;[hmm, I don&#39;t want to do this //gene editing// thing]
 
 (click: ?choice3)[//
