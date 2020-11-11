@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Designer Baby" startnode="1" creator="Twine" creator-version="2.3.9" ifid="9983256B-7600-47CB-A1E6-764F8834CDA5" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Select Your Character" tags="" position="153,374.5" size="100,100">Since it&#39;s a game, here&#39;s an obligatory bit to choose your character. (or more precisely: here&#39;s a bit to choose how you choose characters--how meta is that!) [[...-&gt;Full Intro]]</tw-passagedata><tw-passagedata pid="2" name="randomize" tags="" position="433,529.5" size="100,100">//from the gene samples we took last week, this is the traits that your child would have: 
+<tw-storydata name="Designer Baby" startnode="1" creator="Twine" creator-version="2.3.9" ifid="9983256B-7600-47CB-A1E6-764F8834CDA5" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Select Your Character" tags="" position="153,374" size="100,100">Since it&#39;s a game, here&#39;s an obligatory bit to choose your character. (or more precisely: here&#39;s a bit to choose how you choose characters--how meta is that!) [[...-&gt;Full Intro]]</tw-passagedata><tw-passagedata pid="2" name="randomize" tags="" position="433,529" size="100,100">//from the gene samples we took last week, this is the traits that your child would have: 
           [[VIEW REPORT-&gt;Character Selection]]//
 		
 		  
@@ -21,11 +21,11 @@
 (click: ?show_2)|show_3&gt;[//            ...//]
 (click: ?show_3)|show_4&gt;[//     ...//]
 (click: ?show_4)[//Mrs.	██████... if you&#39;ve been hearing voices in your head, particularly if that voice is &quot;not italicized&quot; (not sure what that means but) you should get that checked later|show_5&gt;[--]//]
-(click: ?show_5)|show6&gt;[//But for now, here&#39;s the [[REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="3" name="myself" tags="" position="457,372.5" size="100,100">Please click |show_a1&gt;[here] to enable your camera
+(click: ?show_5)|show6&gt;[//But for now, here&#39;s the [[REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="3" name="myself" tags="" position="457,372" size="100,100">Please click |show_a1&gt;[here] to enable your camera
 Or [[not-&gt;Full Intro]], if you don&#39;t want to give some random Twine game permission to your camera
 
 (click: ?show_a1)[As a Twine game, the camera is also text-based... it says you look awesome but that doesn&#39;t really help our character selection process
-well, maybe go back and choose [[another method-&gt;Full Intro]]...]</tw-passagedata><tw-passagedata pid="4" name="detailed control over every single trait" tags="" position="438,226.5" size="100,100">//we... uh... we don&#39;t really do that here//
+well, maybe go back and choose [[another method-&gt;Full Intro]]...]</tw-passagedata><tw-passagedata pid="4" name="detailed control over every single trait" tags="" position="438,226" size="100,100">//we... uh... we don&#39;t really do that here//
 
 |show_1&gt;[what?]
 
@@ -38,11 +38,11 @@ well, maybe go back and choose [[another method-&gt;Full Intro]]...]</tw-passage
 (click: ?show_6)|show_7&gt;[//if you&#39;ve been hearing voices in your head, particularly if that voice is &quot;not italicized&quot; (not sure what that means but) you should get that checked later--
 
 --But for now, Mrs.	██████, let&#39;s just get things straight:
-You are pregnant with a child, and from the gene samples we took last week, this is the traits that the child would have: [[VIEW REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="5" name="Full Intro" tags="" position="309,375.5" size="100,100">Since it&#39;s a game, here&#39;s an obligatory bit to choose your character. (or more precisely: here&#39;s a bit to choose how you choose characters--how meta is that!) ...
+You are pregnant with a child, and from the gene samples we took last week, this is the traits that the child would have: [[VIEW REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="5" name="Full Intro" tags="" position="309,375" size="100,100">Since it&#39;s a game, here&#39;s an obligatory bit to choose your character. (or more precisely: here&#39;s a bit to choose how you choose characters--how meta is that!) ...
 
 1. Well I don&#39;t really care, just [[randomize]]
 2. I want my character to look exactly like [[myself]]
-3. I want the BEST design and HIGHEST stats, give me [[detailed control over every single trait]]</tw-passagedata><tw-passagedata pid="6" name="Character Selection" tags="" position="582,373.5" size="100,100">{(set: _random to (random: 2))
+3. I want the BEST design and HIGHEST stats, give me [[detailed control over every single trait]]</tw-passagedata><tw-passagedata pid="6" name="Character Selection" tags="" position="582,372" size="100,100">{(set: _random to (random: 2))
 (if: _random is 0)[(set: $hair to &quot;long&quot;)]
 (else-if: _random is 1)[(set: $hair to &quot;short&quot;)]
 (else:)[(set: $hair to &quot;none&quot;)]
@@ -51,9 +51,9 @@ You are pregnant with a child, and from the gene samples we took last week, this
 (else-if: _random is 1)[(set: $hair_color to &quot;red&quot;)]
 (else:)[(set: $hair_color to &quot;blonde&quot;)]
 (set: _random to (random: 2))
-(if: _random is 0)[(set: $eye_color to &quot;long&quot;)]
-(else-if: _random is 1)[(set: $eye_color to &quot;short&quot;)]
-(else:)[(set: $eye_color to &quot;none&quot;)]
+(if: _random is 0)[(set: $eye_color to &quot;brown&quot;)]
+(else-if: _random is 1)[(set: $eye_color to &quot;blue&quot;)]
+(else:)[(set: $eye_color to &quot;green&quot;)]
 (set: _random to (random: 2))
 (if: _random is 0)[(set: $height to &quot;tall&quot;)]
 (else-if: _random is 1)[(set: $height to &quot;medium&quot;)]
@@ -62,7 +62,7 @@ You are pregnant with a child, and from the gene samples we took last week, this
 (if: _random is 0)[(set: $build to &quot;chubby&quot;)]
 (else-if: _random is 1)[(set: $build to &quot;fit/medium&quot;)]
 (else:)[(set: $build to &quot;skinny&quot;)]
-(set: _random to (random: 3))
+(set: _random to (random: 5))
 (if: _random is 0)[(set: $disease to &quot;higher risk of cancer&quot;)]
 (else-if: _random is 1)[(set: $disease to &quot;leukemia&quot;)]
 (else:)[(set: $disease to &quot;none&quot;)]}
@@ -82,18 +82,18 @@ You are pregnant with a child, and from the gene samples we took last week, this
 Yeah[[...-&gt;DocConversation1]]
 Well, not really but let&#39;s go with it[[...-&gt;DocConversation1]]
 I&#39;m not quite satisfied[[...-&gt;DocConversation2]]
-You serious? This is the worst thing ever created![[...-&gt;DocConversation3]]</tw-passagedata><tw-passagedata pid="7" name="DocConversation1" tags="" position="765,244.5" size="100,100">//Are you sure? While your child doesn&#39;t have any ^^ahem^^ **Problems**, you can still consider using our gene editing technology for &quot;minor improvements&quot;--after all, most of our cases don&#39;t involve significant diseases//
+You serious? This is the worst thing ever created![[...-&gt;DocConversation3]]</tw-passagedata><tw-passagedata pid="7" name="DocConversation1" tags="" position="762,222" size="100,100">//Are you sure? While your child doesn&#39;t have any ^^ahem^^ **Problems**, you can still consider using our gene editing technology for &quot;minor improvements&quot;--after all, most of our cases don&#39;t involve significant diseases//
 
-|choice1&gt;[I just don&#39;t want to do it [[...-&gt;Confirmation]]]
+|choice1&gt;[(set: $edit to 0)I just don&#39;t want to do it [[...-&gt;Confirmation]]]
 |choice2&gt;[Maybe I should talk to my [[friend-&gt;Friend]]]
-|choice3&gt;[Hmm, let me see what I can [[edit-&gt;Editing]]]</tw-passagedata><tw-passagedata pid="8" name="DocConversation3" tags="" position="763,513.5" size="100,100">//please calm down, Mrs.██████:
+|choice3&gt;[Hmm, let me see what I can [[edit-&gt;Editing]]]</tw-passagedata><tw-passagedata pid="8" name="DocConversation3" tags="" position="762,540" size="100,100">//please calm down, Mrs.██████:
 while I agree that some of these traits may be ^^ahem^^**uncommon**, I wouldn&#39;t say that this child is the &quot;worst&quot;|show_1&gt;[...]
 (click: ?show_1)[we have handled even worse cases before, and I can assure you that: with the gene editing technology that we have, you can safely edit any of these traits as you wish]
 //
 
 ~~I should talk to my friend about this~~
 ~~gene editing sounds a bit sketchy~~
-[[What can I edit?-&gt;Editing]]</tw-passagedata><tw-passagedata pid="9" name="DocConversation2" tags="" position="736,378.5" size="100,100">//If that&#39;s the case, there is always a chance to change any of these traits with our gene editing technology. In fact, most of the parents, 80%!--eventually decided to change some bits of their child--//
+[[What can I edit?-&gt;Editing]]</tw-passagedata><tw-passagedata pid="9" name="DocConversation2" tags="" position="736,378" size="100,100">//If that&#39;s the case, there is always a chance to change any of these traits with our gene editing technology. In fact, most of the parents, 80%!--eventually decided to change some bits of their child--//
 
 [[well... I&#39;m not so sure, let me talk with my friend first about this-&gt;Friend]]
 [[yeah, go ahead!-&gt;Editing]]
@@ -106,11 +106,127 @@ Really? Well, if I&#39;m not speaking as a doctor--just speaking as an individua
 
 [[well... I&#39;m not so sure, let me talk with my friend first about this-&gt;Friend]]
 [[yeah, go ahead!-&gt;Editing]]]
-</tw-passagedata><tw-passagedata pid="10" name="Confirmation" tags="" position="1020,377.5" size="100,100">(display child looks)
+</tw-passagedata><tw-passagedata pid="10" name="Confirmation" tags="" position="1038,377" size="100,100">(display child looks)
 (play child crying sound..?)
 
-Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" position="572,115.5" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="Editing" tags="" position="881,375.5" size="100,100">(--editing screen--)
-[[Looks great! Let&#39;s Proceed.-&gt;Confirmation]]</tw-passagedata></tw-storydata>
+Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" position="572,115" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="Editing" tags="" position="879,375" size="100,100">(set:$edit to 0)
+(set:$number_of_edits to 0)
+(set:_tempDisease to $disease)
+(font: &quot;Courier&quot;) [Report:
+ - Hair: |hair&gt;[$hair]
+ - Hair color: |hair_color&gt;[$hair_color]
+ - Eye Color: |eye_color&gt;[$eye_color]
+ - Height: |height&gt;[$height]
+ - Body Shape: |build&gt;[$build]
+ - Disease: |disease&gt;[$disease]
+ ]
+|diseaseDialogue)[//Please know that &#39;&#39;you&#39;&#39; have intentionally chosen to give your child a genetic disease*, our company will not take any responsibility for the results of this decision.//]
+|proceed&gt;[[[Confirmation]]]
+(click:?hair)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
+    (replace:?proceed)[let&#39;s finish all the edits before proceeding]
+ 	(replace:?hair)
+	[|choise1h&gt;[long], |choise2h&gt;[short], |choise3h&gt;[none]]
+	(click:?choise1h)[
+		(set:$edit to 1)(set:$hair to &quot;long&quot;)(replace:?hair)[$hair]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise2h)[
+		(set:$edit to 1)(set:$hair to &quot;short&quot;)(replace:?hair)[$hair]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise3h)[
+		(set:$edit to 1)(set:$hair to &quot;none&quot;)(replace:?hair)[$hair]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+}]
+(click:?hair_color)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
+    (replace:?proceed)[(let&#39;s finish all the edits before proceeding)]
+ 	(replace:?hair_color)
+	[|choise1hc&gt;[brown], |choise2hc&gt;[red], |choise3hc&gt;[blonde]]
+	(click:?choise1hc)[
+		(set:$edit to 1)(set:$hair_color to &quot;brown&quot;)(replace:?hair_color)[$hair_color]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise2hc)[
+		(set:$edit to 1)(set:$hair_color to &quot;red&quot;)(replace:?hair_color)[$hair_color]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise3hc)[
+		(set:$edit to 1)(set:$hair_color to &quot;blonde&quot;)(replace:?hair_color)[$hair_color]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+}]
+(click:?eye_color)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
+    (replace:?proceed)[(let&#39;s finish all the edits before proceeding)]
+ 	(replace:?eye_color)
+	[|choise1ec&gt;[brown], |choise2h&gt;[blue], |choise3h&gt;[green]]
+	(click:?choise1ec)[
+		(set:$edit to 1)(set:$eye_color to &quot;brown&quot;)(replace:?eye_color)[$eye_color]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise2ec)[
+		(set:$edit to 1)(set:$eye_color to &quot;blue&quot;)(replace:?eye_color)[$eye_color]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise3ec)[
+		(set:$edit to 1)(set:$eye_color to &quot;green&quot;)(replace:?eye_color)[$eye_color]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+}]
+(click:?height)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
+    (replace:?proceed)[(let&#39;s finish all the edits before proceeding)]
+ 	(replace:?height)
+	[|choise1ht&gt;[tall], |choise2ht&gt;[medium], |choise3ht&gt;[short]]
+	(click:?choise1ht)[
+		(set:$edit to 1)(set:$height to &quot;tall&quot;)(replace:?height)[$height]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise2ht)[
+		(set:$edit to 1)(set:$height to &quot;medium&quot;)(replace:?height)[$height]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise3ht)[
+		(set:$edit to 1)(set:$height to &quot;short&quot;)(replace:?height)[$height]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+}]
+(click:?build)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
+    (replace:?proceed)[(let&#39;s finish all the edits before proceeding)]
+ 	(replace:?build)
+	[|choise1b&gt;[chubby], |choise2b&gt;[fit/medium], |choise3b&gt;[skinny]]
+	(click:?choise1b)[
+		(set:$edit to 1)(set:$build to &quot;chubby&quot;)(replace:?build)[$build]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise2b)[
+		(set:$edit to 1)(set:$build to &quot;fit/medium&quot;)(replace:?build)[$build]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise3b)[
+		(set:$edit to 1)(set:$build to &quot;skinhy&quot;)(replace:?build)[$build]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+}]
+(click:?disease)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
+    (replace:?proceed)[(let&#39;s finish all the edits before proceeding)]
+ 	(replace:?disease)
+	[|choise1d&gt;[none], |choise2d&gt;[higher risk of cancer], |choise3d&gt;[leukemia]]
+	(click:?choise1d)[
+		(set:$edit to 1)(set:$disease to &quot;none&quot;)(replace:?disease)[$disease]
+		(if:_tempDisease is &quot;none&quot;)[(if:$disease is not &quot;none&quot;)[(show:?diseaseDialogue)]]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise2d)[
+		(set:$edit to 1)(set:$disease to &quot;higher risk of cancer&quot;)(replace:?disease)[$disease]
+		(if:_tempDisease is &quot;none&quot;)[(if:$disease is not &quot;none&quot;)[(show:?diseaseDialogue)]]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+	(click:?choise3d)[
+		(set:$edit to 1)(set:$disease to &quot;leukemia&quot;)(replace:?disease)[$disease]
+		(if:_tempDisease is &quot;none&quot;)[(if:$disease is not &quot;none&quot;)[(show:?diseaseDialogue)]]
+		(replace:?proceed)[[[Confirmation]]]
+	]
+}]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
