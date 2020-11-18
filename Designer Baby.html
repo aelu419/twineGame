@@ -20,7 +20,7 @@
 (click: ?show_1)|show_2&gt;[//(confused stare:) ...//]
 (click: ?show_2)|show_3&gt;[//            ...//]
 (click: ?show_3)|show_4&gt;[//     ...//]
-(click: ?show_4)[//Mrs.	██████... if you&#39;ve been hearing voices in your head, particularly if that voice is &quot;not italicized&quot; (not sure what that means but) you should get that checked later|show_5&gt;[--]//]
+(click: ?show_4)[//Mrs.$name... if you&#39;ve been hearing voices in your head, particularly if that voice is &quot;not italicized&quot; (not sure what that means but) you should get that checked later|show_5&gt;[--]//]
 (click: ?show_5)|show6&gt;[//But for now, here&#39;s the [[REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="3" name="myself" tags="" position="457,372" size="100,100">Please click |show_a1&gt;[here] to enable your camera
 Or [[not-&gt;Full Intro]], if you don&#39;t want to give some random Twine game permission to your camera
 
@@ -39,7 +39,7 @@ well, maybe go back and choose [[another method-&gt;Full Intro]]...]</tw-passage
 
 --But for now, Mrs.	██████, let&#39;s just get things straight:
 You are pregnant with a child, and from the gene samples we took last week, this is the traits that the child would have: [[VIEW REPORT-&gt;Character Selection]]//]</tw-passagedata><tw-passagedata pid="5" name="Full Intro" tags="" position="309,375" size="100,100">Since it&#39;s a game, here&#39;s an obligatory bit to choose your character. (or more precisely: here&#39;s a bit to choose how you choose characters--how meta is that!) ...
-
+(set: $name to (prompt: &quot;Enter your last name:&quot;, &quot;&quot;)
 1. Well I don&#39;t really care, just [[randomize]]
 2. I want my character to look exactly like [[myself]]
 3. I want the BEST design and HIGHEST stats, give me [[detailed control over every single trait]]</tw-passagedata><tw-passagedata pid="6" name="Character Selection" tags="" position="582,372" size="100,100">{(set: _random to (random: 2))
@@ -84,32 +84,26 @@ Well, not really but let&#39;s go with it[[...-&gt;DocConversation1]]
 I&#39;m not quite satisfied[[...-&gt;DocConversation2]]
 You serious? This is the worst thing ever created![[...-&gt;DocConversation3]]</tw-passagedata><tw-passagedata pid="7" name="DocConversation1" tags="" position="762,222" size="100,100">//Are you sure? While your child doesn&#39;t have any ^^ahem^^ **Problems**, you can still consider using our gene editing technology for &quot;minor improvements&quot;--after all, most of our cases don&#39;t involve significant diseases//
 
-|choice1&gt;[(set: $edit to 0)I just don&#39;t want to do it [[...-&gt;Confirmation]]]
-|choice2&gt;[Maybe I should talk to my [[friend-&gt;Friend]]]
-|choice3&gt;[Hmm, let me see what I can [[edit-&gt;Editing]]]</tw-passagedata><tw-passagedata pid="8" name="DocConversation3" tags="" position="762,540" size="100,100">//please calm down, Mrs.██████:
+|choice1&gt;[(set: $edit to 0)I just don&#39;t want to do it [[...-&gt;NEConfirmation]]]
+|choice2&gt;[Hmm, let me see what I can [[edit-&gt;Editing]]]</tw-passagedata><tw-passagedata pid="8" name="DocConversation3" tags="" position="762,540" size="100,100">//please calm down, Mrs.($name):
 while I agree that some of these traits may be ^^ahem^^**uncommon**, I wouldn&#39;t say that this child is the &quot;worst&quot;|show_1&gt;[...]
 (click: ?show_1)[we have handled even worse cases before, and I can assure you that: with the gene editing technology that we have, you can safely edit any of these traits as you wish]
 //
 
 ~~I should talk to my friend about this~~
 ~~gene editing sounds a bit sketchy~~
-[[What can I edit?-&gt;Editing]]</tw-passagedata><tw-passagedata pid="9" name="DocConversation2" tags="" position="736,378" size="100,100">//If that&#39;s the case, there is always a chance to change any of these traits with our gene editing technology. In fact, most of the parents, 80%!--eventually decided to change some bits of their child--//
+[[What can I edit?-&gt;Editing]]</tw-passagedata><tw-passagedata pid="9" name="DocConversation2" tags="" position="745,382" size="100,100">//If that&#39;s the case, there is always a chance to change any of these traits with our gene editing technology. In fact, most of the parents, 80%!--eventually decided to change some bits of their child--//
 
-[[well... I&#39;m not so sure, let me talk with my friend first about this-&gt;Friend]]
 [[yeah, go ahead!-&gt;Editing]]
-|choice3&gt;[hmm, I don&#39;t want to do this //gene editing// thing]
+|choice2&gt;[hmm, I don&#39;t want to do this //gene editing// thing]
 
-(click: ?choice3)[//
+(click: ?choice2)[//
 Really? Well, if I&#39;m not speaking as a doctor--just speaking as an individual: I think we as parents have this **responsibility** to our children, you know, to make their lives better--
 --are you sure you don&#39;t want to edit any of these traits?
 //
-
-[[well... I&#39;m not so sure, let me talk with my friend first about this-&gt;Friend]]
-[[yeah, go ahead!-&gt;Editing]]]
-</tw-passagedata><tw-passagedata pid="10" name="Confirmation" tags="" position="1038,377" size="100,100">(display child looks)
+[[yeah, go ahead!-&gt;Editing]]]</tw-passagedata><tw-passagedata pid="10" name="EConfirmation" tags="" position="1068,519" size="100,100">(display child looks)
 (play child crying sound..?)
-
-Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" position="572,115" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="Editing" tags="" position="879,375" size="100,100">(set:$edit to 0)
+[[Start Game from your child&#39;d P.O.V.-&gt;ESick]]</tw-passagedata><tw-passagedata pid="11" name="Editing" tags="" position="879,375" size="100,100">(set:$edit to 0)
 (set:$number_of_edits to 0)
 (set:_tempDisease to $disease)
 (font: &quot;Courier&quot;) [Report:
@@ -121,22 +115,22 @@ Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" positi
  - Disease: |disease&gt;[$disease]
  ]
 |diseaseDialogue)[//Please know that &#39;&#39;you&#39;&#39; have intentionally chosen to give your child a genetic disease*, our company will not take any responsibility for the results of this decision.//]
-|proceed&gt;[[[Confirmation]]]
+
 (click:?hair)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
     (replace:?proceed)[let&#39;s finish all the edits before proceeding]
  	(replace:?hair)
 	[|choise1h&gt;[long], |choise2h&gt;[short], |choise3h&gt;[none]]
 	(click:?choise1h)[
 		(set:$edit to 1)(set:$hair to &quot;long&quot;)(replace:?hair)[$hair]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise2h)[
 		(set:$edit to 1)(set:$hair to &quot;short&quot;)(replace:?hair)[$hair]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise3h)[
 		(set:$edit to 1)(set:$hair to &quot;none&quot;)(replace:?hair)[$hair]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 }]
 (click:?hair_color)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
@@ -145,15 +139,15 @@ Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" positi
 	[|choise1hc&gt;[brown], |choise2hc&gt;[red], |choise3hc&gt;[blonde]]
 	(click:?choise1hc)[
 		(set:$edit to 1)(set:$hair_color to &quot;brown&quot;)(replace:?hair_color)[$hair_color]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise2hc)[
 		(set:$edit to 1)(set:$hair_color to &quot;red&quot;)(replace:?hair_color)[$hair_color]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise3hc)[
 		(set:$edit to 1)(set:$hair_color to &quot;blonde&quot;)(replace:?hair_color)[$hair_color]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 }]
 (click:?eye_color)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
@@ -162,15 +156,15 @@ Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" positi
 	[|choise1ec&gt;[brown], |choise2h&gt;[blue], |choise3h&gt;[green]]
 	(click:?choise1ec)[
 		(set:$edit to 1)(set:$eye_color to &quot;brown&quot;)(replace:?eye_color)[$eye_color]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise2ec)[
 		(set:$edit to 1)(set:$eye_color to &quot;blue&quot;)(replace:?eye_color)[$eye_color]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise3ec)[
 		(set:$edit to 1)(set:$eye_color to &quot;green&quot;)(replace:?eye_color)[$eye_color]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 }]
 (click:?height)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
@@ -179,15 +173,15 @@ Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" positi
 	[|choise1ht&gt;[tall], |choise2ht&gt;[medium], |choise3ht&gt;[short]]
 	(click:?choise1ht)[
 		(set:$edit to 1)(set:$height to &quot;tall&quot;)(replace:?height)[$height]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise2ht)[
 		(set:$edit to 1)(set:$height to &quot;medium&quot;)(replace:?height)[$height]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise3ht)[
 		(set:$edit to 1)(set:$height to &quot;short&quot;)(replace:?height)[$height]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 }]
 (click:?build)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
@@ -196,15 +190,15 @@ Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" positi
 	[|choise1b&gt;[chubby], |choise2b&gt;[fit/medium], |choise3b&gt;[skinny]]
 	(click:?choise1b)[
 		(set:$edit to 1)(set:$build to &quot;chubby&quot;)(replace:?build)[$build]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise2b)[
 		(set:$edit to 1)(set:$build to &quot;fit/medium&quot;)(replace:?build)[$build]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise3b)[
 		(set:$edit to 1)(set:$build to &quot;skinhy&quot;)(replace:?build)[$build]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 }]
 (click:?disease)[{(set:$edit to 2)(set:$number_of_edits to $number_of_edits+1)
@@ -214,19 +208,76 @@ Start Game</tw-passagedata><tw-passagedata pid="11" name="Friend" tags="" positi
 	(click:?choise1d)[
 		(set:$edit to 1)(set:$disease to &quot;none&quot;)(replace:?disease)[$disease]
 		(if:_tempDisease is &quot;none&quot;)[(if:$disease is not &quot;none&quot;)[(show:?diseaseDialogue)]]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise2d)[
 		(set:$edit to 1)(set:$disease to &quot;higher risk of cancer&quot;)(replace:?disease)[$disease]
 		(if:_tempDisease is &quot;none&quot;)[(if:$disease is not &quot;none&quot;)[(show:?diseaseDialogue)]]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
 	(click:?choise3d)[
 		(set:$edit to 1)(set:$disease to &quot;leukemia&quot;)(replace:?disease)[$disease]
 		(if:_tempDisease is &quot;none&quot;)[(if:$disease is not &quot;none&quot;)[(show:?diseaseDialogue)]]
-		(replace:?proceed)[[[Confirmation]]]
+		(replace:?proceed)[[[EConfirmation]]]
 	]
-}]</tw-passagedata></tw-storydata>
+}]
+[[Looks great! Let&#39;s proceed.-&gt;EConfirmation]]</tw-passagedata><tw-passagedata pid="12" name="ESick" tags="" position="1245,400" size="100,100">You are in first grade. Mrs. Smith’s sermon on US history is as riveting as always.
+[[Daydream-&gt;ESick2]]</tw-passagedata><tw-passagedata pid="13" name="NEConfirmation" tags="" position="1041,159" size="100,100">(display child looks)
+(play child crying sound..?)
+[[Start Game from your child&#39;d P.O.V.-&gt;NESick]]</tw-passagedata><tw-passagedata pid="14" name="NESick" tags="" position="1206,0" size="100,100">You are in first grade. Mrs. Smith is once again going on about George Washington and an overwhelming sense of boredom overcomes you.
+[[Stare at your feet…-&gt;NESick2]]</tw-passagedata><tw-passagedata pid="15" name="ERomance" tags="" position="1234,527.2000007629395" size="100,100">You work up the courage to finally ask your crush, Alex, out on a date to the movies. When they agree, you feel like jumping with joy. You have had a crush on them for a couple months and are very excited that they agreed.
+[[Go to the movies…-&gt;ERomance2]]</tw-passagedata><tw-passagedata pid="16" name="NERomance" tags="" position="1214,126.20000076293945" size="100,100">You are at your locker between periods and you see your middle school crush out the corner of your eye.
+[[Butterflies in your stomach...-&gt;NERomance2]]</tw-passagedata><tw-passagedata pid="17" name="NERomance2" tags="" position="1329,127.20000076293945" size="100,100">You frantically check yourself out in the tiny mirror hung on the inside of your locker door. You flash a smile to make sure your teeth are clean (yes you did brush your teeth this morning). You run your fingers through your hair and fix your posture.
+[[Shut the locker door-&gt;NERomance3]]</tw-passagedata><tw-passagedata pid="18" name="ECollege" tags="" position="1242,650.2000007629395" size="100,100">As a senior at Central High, college is on your mind. You feel slightly worried about applications since your GPA is not quite as high as you would like it to be. You also are a bit below your target for standardized test scores.
+[[Parents talk to you about grades-&gt;ECollege2]]
+</tw-passagedata><tw-passagedata pid="19" name="NERomance3" tags="" position="1445,127.20000076293945" size="100,100">Alex: “Hey! What’s up”
+You: “Nothing much! I”m wondering if you’d uhh or I mean if you’re like free this weekend?”
+[[I sound like an idiot-&gt;NERomance4]]
+</tw-passagedata><tw-passagedata pid="20" name="NERomance4" tags="" position="1557,133.20000076293945" size="100,100">You: “Would you want to go to the movies with me this weekend?”
+There we go. I did it! I asked.
+Alex: “I’m not doing anything this weekend. But I don’t know if I can go to the movies with you.”
+[[Why…-&gt;NERomance5]]
+</tw-passagedata><tw-passagedata pid="21" name="NERomance5" tags="" position="1666,135.20000076293945" size="100,100">Alex: “My parents said I can’t hang out with people like you.”
+[[What do you mean…-&gt;NERomance6]]
+</tw-passagedata><tw-passagedata pid="22" name="NERomance6" tags="" position="1774,133.20000076293945" size="100,100">Alex: “You’re just not like me. You’re different. And my parents say that you could die easily. You’re really cool though! Maybe we can do homework together.”
+[[Yeah… Maybe… Homework hunh...-&gt;NECollege]]</tw-passagedata><tw-passagedata pid="23" name="NECollege" tags="" position="1213,251.20000076293945" size="100,100">You are applying to colleges. Along with the Common App, you are required to send in a genetic report. 
+[[*send in report button-&gt;NECollege2]]
+</tw-passagedata><tw-passagedata pid="24" name="NESick2" tags="" position="1321,2" size="100,100">…well, I guess you shouldn’t have expected much entertainment from that. Nonetheless, there’s nothing better to do.
+[[Keep staring at your feet…-&gt;NESick3]]</tw-passagedata><tw-passagedata pid="25" name="ESick2" tags="" position="1356,400.20000076293945" size="100,100">Suddenly the room is filled with flowers and rainbows. A monster truck breaks through the wall housing a unicorn inside. The unicorn bounds out in a majestic leap. The unicorn stares you down…
+[[I know what to do…-&gt;ESick3]]
+
+</tw-passagedata><tw-passagedata pid="26" name="ESick3" tags="" position="1461,401.20000076293945" size="100,100">You stare deep into the unicorns eyes. A murmuring fills your ears. You can finally hear the secrets to life itself. You slowly begin to levitate. As you rise in the air your ears are filled with… a strange sound… you snap out of your dream.
+[[I have no idea what’s going on.-&gt;ESick4]]</tw-passagedata><tw-passagedata pid="27" name="ESick4" tags="" position="1563,399.20000076293945" size="100,100">Frantic, you snap out of your daydream. Mrs. Smith has stopped her lecture. All you can hear is one sound. A strange sound…
+[[Locate this strange noise.-&gt;ESick5]]
+</tw-passagedata><tw-passagedata pid="28" name="ESick5" tags="" position="1669,402.20000076293945" size="100,100">You glance around the room, you zone in on the culprit. Your best friend Jonathan has a strange sound coming from his mouth. His nose is bright red, his eyes look sunken, and with every noise he makes, he launches spit outward. Everyone turns to Jonathan and begins to laugh uncontrollably. “Nice comedy routine Johnny!” “My dad told me to stay away from coughers like you! I heard we can catch cooties from you!” Cougher? What on Earth is a cougher? Cooties? Whatever that is, it must be deadly. You decide to stay away from Jonathan from now on...
+[[Fast forward a couple of years-&gt;ERomance]]</tw-passagedata><tw-passagedata pid="29" name="NESick3" tags="" position="1442,0" size="100,100">As you continue your effort to kill time, you feel an uncomfortable itch in your throat. You try to ignore it but eventually it becomes the only thing you can think of
+[[…*cough* *cough*-&gt;NESick4]]</tw-passagedata><tw-passagedata pid="30" name="NESick4" tags="" position="1557,1.2000007629394531" size="100,100">Suddenly Mrs. Smith stops, and everyone in the class starts laughing. Your face glows red with embarrassment, and even Mrs. Smith struggles to hold back her laughter. “Do you need to see the nurse?” she asks.
+[[Walk to the nurse…-&gt;NESick5]]</tw-passagedata><tw-passagedata pid="31" name="NESick5" tags="" position="1667,1.2000007629394531" size="100,100">The nurse is somewhat frustrated as her daily routine usually involves catching up on sleep and you’ve thoroughly interrupted her plans. People don’t usually get sick nowadays as most people have been genetically optimized. But not yourself… The nurse gives you cough syrup and sends you home. You begin to resent your parents for causing you such embarrassment. Why couldn’t they have made you just like everyone else...
+[[Fast forward a couple of years...-&gt;NERomance]]</tw-passagedata><tw-passagedata pid="32" name="ERomance2" tags="" position="1345,532.2000007629395" size="100,100">You hold hands as you watch the movie and before you part ways, they give you a kiss on your cheek. 
+[[Go to sleep with a smile on your face…-&gt;ERomance3]]</tw-passagedata><tw-passagedata pid="33" name="ERomance3" tags="" position="1451,532.2000007629395" size="100,100">You go on another date and decide that you want to make it official. However, when you tell your best friend, their reaction is not what you expected.
+[[Tell friend-&gt;ERomance4]]
+</tw-passagedata><tw-passagedata pid="34" name="ERomance4" tags="" position="1552,530.2000007629395" size="100,100">Best friend: “Dude, Alex??? Why would you go for them?? She’s not even genetically edited...” They continue to make fun of Alex, telling you that you are better than her.
+[[Ignore friend-&gt;ERomance5]]
+</tw-passagedata><tw-passagedata pid="35" name="ERomance5" tags="" position="1656,532.2000007629395" size="100,100">You feel a bit bothered, but defend her regardless and your best friend agrees to back off. You get closer with Alex and decide to finally tell your parents about them.
+[[Tell parents-&gt;ERomance6]]
+</tw-passagedata><tw-passagedata pid="36" name="ERomance6" tags="" position="1760,536.2000007629395" size="100,100">You are shocked when your parents have a similar reaction to your best friend. They ask why you would even like someone like that and tell you to end your relationship. You really like Alex but your parents insist that you break up.
+[[Break up with Alex-&gt;ERomance7]]
+</tw-passagedata><tw-passagedata pid="37" name="ERomance7" tags="" position="1863,538.2000007629395" size="100,100">You: “Alex, it’s not you, it’s me. I just don’t think we can make this work”. Alex is confused, as things have been going great, and tries to get you to explain more. You try your best to spare Alex’s feelings and slowly, you guys drift apart.
+[[A few more years later-&gt;ECollege]]</tw-passagedata><tw-passagedata pid="38" name="NECollege2" tags="" position="1315,255.20000076293945" size="100,100">You have a nearly perfect GPA, high standardized test scores, and lots of extracurriculars, but you are worried that they won’t like your genetic report… 
+[[*a couple months later..-&gt;NECollege3]]
+</tw-passagedata><tw-passagedata pid="39" name="NECollege3" tags="" position="1423,249.20000076293945" size="100,100">Your college acceptance emails pop up in your inbox. You nervously click on the links…
+[[*open emails--&gt;NECollege4]]
+
+</tw-passagedata><tw-passagedata pid="40" name="NECollege4" tags="" position="1543,250.20000076293945" size="100,100">You happily read over your acceptances to your safety schools but are disappointed by the rest of your decisions. You note that many of your genetically modified schoolmates received many more acceptances despite their less competitive academic standings.
+[[Why didn&#39;t my parents genetically modify me???-&gt;End Game]]</tw-passagedata><tw-passagedata pid="41" name="End Game" tags="" position="2060,336.20000076293945" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="42" name="ECollege2" tags="" position="1347,648.2000007629395" size="100,100">You fill out the Common App and send your genetic report along with it, as it is now a requirement. 
+[[Submit your applications-&gt;ECollege3]]
+</tw-passagedata><tw-passagedata pid="43" name="ECollege3" tags="" position="1452,646.2000007629395" size="100,100">You nervously await your decisions and when they are sent out, you are unsure what to expect.
+[[Open decision emails-&gt;ECollege4]]
+</tw-passagedata><tw-passagedata pid="44" name="ECollege4" tags="" position="1557,647.2000007629395" size="100,100">As you open them, you find that you got into all your safety schools, along with most of your target schools. You are also very excited to find out that you got into a top school.
+[[Share news with friends-&gt;ECollege5]]
+</tw-passagedata><tw-passagedata pid="45" name="ECollege5" tags="" position="1659,649.2000007629395" size="100,100">You are surprised to discover that one of your close friends did not get into nearly as many schools, despite having much better academic credentials. They are the only one of your friends who was not genetically edited before birth and you realize that this definitely impacted their college acceptances.
+[[Why didn’t my friend’s parents genetically modify them?? -&gt;End Game]]
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
