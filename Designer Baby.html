@@ -42,10 +42,10 @@ tw-story.e.sick {
   font-family: "Comic Sans MS";
 }
 tw-story.e.romance {
-  font-family: "Cambria";
+  font-family: "Cambria", serif;
 }
 tw-story.e.college {
-  font-family: "Candara";
+  font-family: "Candara", Tahoma, sans-serif;
 }
 tw-story.end {
   background-color: rgb(219, 172, 145);
@@ -61,14 +61,14 @@ img {
 tw-link {
   color: white;
   text-decoration: underline;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="intro" color="red"></tw-tag>,<tw-tag name="ne" color="green"></tw-tag>,<tw-tag name="e" color="blue"></tw-tag>,<tw-tag name="end" color="yellow"></tw-tag>,<tw-tag name="college" color="purple"></tw-tag>,<tw-tag name="romance" color="purple"></tw-tag>,<tw-tag name="sick" color="purple"></tw-tag><tw-passagedata pid="1" name="Select Your Character" tags="intro" position="152,374" size="100,100">{
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="college" color="purple"></tw-tag>,<tw-tag name="e" color="blue"></tw-tag>,<tw-tag name="end" color="yellow"></tw-tag>,<tw-tag name="intro" color="red"></tw-tag>,<tw-tag name="ne" color="green"></tw-tag>,<tw-tag name="romance" color="purple"></tw-tag>,<tw-tag name="sick" color="purple"></tw-tag><tw-passagedata pid="1" name="Select Your Character" tags="intro" position="152,374" size="100,100">{
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).removeClass(\)&lt;/script&gt;&quot;)
 (if: (passage:)&#39;s tags&#39;s length &gt; 0)[(print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;&quot; + (passage:)&#39;s tags.join(&#39; &#39;) + &quot;&#39;\)&lt;/script&gt;&quot;)]
 }
 
 Since it&#39;s a game, here&#39;s an obligatory bit to choose your character. (or more precisely: here&#39;s a bit to choose how you choose characters--how meta is that!) [[...-&gt;Full Intro]]
 
-&lt;img src=&quot;https://aelu419.github.io/twineGame/foreground_t1_1.png&quot;&gt;</tw-passagedata><tw-passagedata pid="2" name="randomize" tags="intro" position="432,530" size="100,100">//from the gene samples we took last week, this is the traits that your child would have: 
+&lt;img src=&quot;https://aelu419.github.io/twineGame/8ce181590c754991a9244eba2785646d.jpeg&quot;&gt;</tw-passagedata><tw-passagedata pid="2" name="randomize" tags="intro" position="432,530" size="100,100">//from the gene samples we took last week, this is the traits that your child would have: 
           [[VIEW REPORT-&gt;Character Selection]]//
 		
 		  
@@ -365,29 +365,32 @@ You are applying to colleges. Along with the Common App, you are required to sen
 </tw-passagedata><tw-passagedata pid="35" name="ERomance5" tags="e" position="1655,532" size="100,100">You feel a bit bothered, but defend her regardless and your best friend agrees to back off. You get closer with Alex and decide to finally tell your parents about them.
 [[Tell parents-&gt;ERomance6]]
 </tw-passagedata><tw-passagedata pid="36" name="ERomance6" tags="e" position="1760,536" size="100,100">You are shocked when your parents have a similar reaction to your best friend. They ask why you would even like someone like that and tell you to end your relationship. You really like Alex but your parents insist that you break up.
-[[Break up with Alex-&gt;ERomance7]]
-</tw-passagedata><tw-passagedata pid="37" name="ERomance7" tags="e" position="1863,538" size="100,100">You: “Alex, it’s not you, it’s me. I just don’t think we can make this work”. Alex is confused, as things have been going great, and tries to get you to explain more. You try your best to spare Alex’s feelings and slowly, you guys drift apart.
-[[A few more years later-&gt;ECollege]]</tw-passagedata><tw-passagedata pid="38" name="NECollege2" tags="ne" position="1315,255" size="100,100">You have a nearly perfect GPA, high standardized test scores, and lots of extracurriculars, but you are worried that they won’t like your genetic report… 
+[[Break up with Alex-&gt;ERomance7a]]
+[[Stay with Alex-&gt;ERomance7b]]</tw-passagedata><tw-passagedata pid="37" name="NECollege2" tags="ne" position="1315,255" size="100,100">You have a nearly perfect GPA, high standardized test scores, and lots of extracurriculars, but you are worried that they won’t like your genetic report… 
 [[*a couple months later..-&gt;NECollege3]]
-</tw-passagedata><tw-passagedata pid="39" name="NECollege3" tags="ne" position="1422,249" size="100,100">Your college acceptance emails pop up in your inbox. You nervously click on the links…
+</tw-passagedata><tw-passagedata pid="38" name="NECollege3" tags="ne" position="1422,249" size="100,100">Your college acceptance emails pop up in your inbox. You nervously click on the links…
 [[*open emails--&gt;NECollege4]]
 
-</tw-passagedata><tw-passagedata pid="40" name="NECollege4" tags="ne" position="1536,249" size="100,100">You happily read over your acceptances to your safety schools but are disappointed by the rest of your decisions. You note that many of your genetically modified schoolmates received many more acceptances despite their less competitive academic standings.
-[[Why didn&#39;t my parents genetically modify me???-&gt;End Game]]</tw-passagedata><tw-passagedata pid="41" name="End Game" tags="end" position="2060,336" size="100,100">{
+</tw-passagedata><tw-passagedata pid="39" name="NECollege4" tags="ne" position="1536,249" size="100,100">You happily read over your acceptances to your safety schools but are disappointed by the rest of your decisions. You note that many of your genetically modified schoolmates received many more acceptances despite their less competitive academic standings.
+[[Why didn&#39;t my parents genetically modify me???-&gt;End Game]]</tw-passagedata><tw-passagedata pid="40" name="End Game" tags="end" position="2060,336" size="100,100">{
 (print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).removeClass(\)&lt;/script&gt;&quot;)
 (if: (passage:)&#39;s tags&#39;s length &gt; 0)[(print: &quot;&lt;script&gt;$(&#39;tw-story&#39;).addClass(&#39;&quot; + (passage:)&#39;s tags.join(&#39; &#39;) + &quot;&#39;\)&lt;/script&gt;&quot;)]
 }
+While seemingly far-fetched, this type of reality is not too far from our present. With the rapid advance of gene editing technology, it’s not a matter of if, but when, it becomes feasible on a large scale. The next generation, or even the current youngest one, will have to face these choices, and ultimately they will need to be prepared to have very difficult conversations about what it means to be accepted.
 
-
-Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="42" name="ECollege2" tags="e" position="1347,649" size="100,100">You fill out the Common App and send your genetic report along with it, as it is now a requirement. 
+Game By: Alan Tao, Carolyn Yuan, Harshan Chenna, Helena Zhang, Nick Linn</tw-passagedata><tw-passagedata pid="41" name="ECollege2" tags="e" position="1347,649" size="100,100">You fill out the Common App and send your genetic report along with it, as it is now a requirement. 
 [[Submit your applications-&gt;ECollege3]]
-</tw-passagedata><tw-passagedata pid="43" name="ECollege3" tags="e" position="1451,646" size="100,100">You nervously await your decisions and when they are sent out, you are unsure what to expect.
+</tw-passagedata><tw-passagedata pid="42" name="ECollege3" tags="e" position="1451,646" size="100,100">You nervously await your decisions and when they are sent out, you are unsure what to expect.
 [[Open decision emails-&gt;ECollege4]]
-</tw-passagedata><tw-passagedata pid="44" name="ECollege4" tags="e" position="1557,647" size="100,100">As you open them, you find that you got into all your safety schools, along with most of your target schools. You are also very excited to find out that you got into a top school.
+</tw-passagedata><tw-passagedata pid="43" name="ECollege4" tags="e" position="1557,647" size="100,100">As you open them, you find that you got into all your safety schools, along with most of your target schools. You are also very excited to find out that you got into a top school.
 [[Share news with friends-&gt;ECollege5]]
-</tw-passagedata><tw-passagedata pid="45" name="ECollege5" tags="e" position="1659,649" size="100,100">You are surprised to discover that one of your close friends did not get into nearly as many schools, despite having much better academic credentials. They are the only one of your friends who was not genetically edited before birth and you realize that this definitely impacted their college acceptances.
+</tw-passagedata><tw-passagedata pid="44" name="ECollege5" tags="e" position="1659,649" size="100,100">You are surprised to discover that one of your close friends did not get into nearly as many schools, despite having much better academic credentials. They are the only one of your friends who was not genetically edited before birth and you realize that this definitely impacted their college acceptances.
 [[Why didn’t my friend’s parents genetically modify them?? -&gt;End Game]]
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="45" name="NERomance7a" tags="" position="1923,194" size="100,100">[[next...-&gt;NECollege]]</tw-passagedata><tw-passagedata pid="46" name="ERomance7a" tags="e romance" position="1895,575" size="100,100">7a. You: “Alex, it’s not you, it’s me. I just don’t think we can make this work”. Alex is confused, as things have been going great, and tries to get you to explain more. You try your best to spare Alex’s feelings and slowly, you guys drift apart.
+
+[[Some years later...-&gt;ECollege]]</tw-passagedata><tw-passagedata pid="47" name="ERomance7b" tags="e romance" position="1895,446" size="100,100">7b. You are appalled at the sheer bigotry of your friends and family and won’t be pressured into leaving such a great person. Your relationship with Alex is strengthened by your willingness to stay committed regardless of social pressure. However, you eventually drift apart from most of your friends, even having a dramatic falling out with your best friend after they trash talked you and Alex to all of their friends, and eventually become very lonely, having only Alex as a friend remaining.
+
+[[Some years later...-&gt;ECollege]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
